@@ -11,3 +11,7 @@ function checkAge ( age) {
     } catch(error) {
         console.log( "오류 :" , error.message); 
     }
+
+
+
+    
