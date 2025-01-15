@@ -1,0 +1,25 @@
+>> 파워쉘을 관리자권한으로 실행 후 붙여넣기
+
+
+# 생성할 파일의 경로를 지정
+$folderPath = "C:\VSC_vue\ch02"
+
+# 폴더가 존재하지 않으면 에러 메시지 출력
+if (-not (Test-Path $folderPath)) {
+    Write-Host "지정된 폴더가 존재하지 않습니다: $folderPath"
+    exit
+}
+
+# 파일 이름 범위를 지정하여 생성   ( 18~40까지 만드는 중) 
+for ($i = 18; $i -le 40; $i++) {
+    $fileName = "js$i.js"
+    $filePath = Join-Path $folderPath $fileName
+
+    # 파일이 이미 존재하지 않으면 새로 생성
+    if (-not (Test-Path $filePath)) {
+        New-Item -Path $filePath -ItemType File -Force | Out-Null
+        Write-Host "$fileName 생성됨"
+    } else {
+        Write-Host "$fileName 이미 존재함"
+    }
+}
