@@ -1,0 +1,40 @@
+<!--2.5 DOM 객체와 이벤트-->
+<!--2.5.1 DOM 객체 선택-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM 객체의 선택-</title>
+</head>
+
+<body>
+ <div id="myDiv"> Hello world! </div>
+ <div class = "myclass"> First Div </div>
+ <div class = "myclass"> Second Div </div>
+<p class="paragraph"> This is a paragraph. </p>
+<div class="myClass2"> Div 1</div>
+<div class="myClass2"> Div 2</div>
+
+<script>
+    // ID가 'myDiv'인 요소를 가져와 textContent 출력
+    const element = document.getElementById(`myDiv`);
+    console.log(element.textContent); // 출력: Hello world!
+
+    // 클래스명이 'myclass'인 요소들을 HTMLCollection으로 가져옴
+    const elements = document.getElementsByClassName(`myclass`);
+    console.log(elements[0].textContent); // 출력: First Div
+    console.log(elements[1].textContent); // 출력: Second Div
+
+    // 클래스명이 'paragraph'인 첫 번째 요소를 선택하여 textContent 출력
+    const element = document.querySelector(`.paragraph`);
+    console.log(element.textContent); // 출력: This is a paragraph.
+
+    // 클래스명이 'myClass2'인 모든 요소를 NodeList로 가져와 반복 출력
+    const elements = document.querySelectorAll(`.myClass2`);
+    elements.forEach((element) => {
+        console.log(element.textContent); // 출력: Div 1, Div 2
+    });
+</script>
+</body>
+</html>
+
