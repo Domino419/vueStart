@@ -1,0 +1,53 @@
+<!--2.5 DOM 객체와 이벤트-->
+<!--2.5.2 DOM 객체의 조작과 이벤트 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 객체의 조작-</title>
+</head>
+
+<body>
+<div class ="container">
+    <h2>텍스트 조작 </h2>
+    <div id = "myDiv"> Origianl Text </div>
+    <button id = "changeText"> Change Text</button>
+
+    <script>
+        // ID가 'myDiv'인 요소를 가져옴
+        const div = document.getElementById(`myDiv`);
+        // ID가 'changeText'인 버튼 요소를 가져옴
+        const button = document.getElementById(`changeText`);
+        // 버튼 클릭 시 div의 텍스트를 변경
+        button.addEventListener(`click`, () => {
+            div.textContent = `Text has been changed!`; // div의 텍스트 변경
+        });
+    </script>
+
+
+    <hr>
+    <div class="container">
+        <h2>속성 조작 </h2>
+        <img id ="myImage" src ="image.jpg" alt = "Image 1">
+        <button id = "changeImage"> Change Image </button>
+
+        <script>
+            // ID가 'myImage'인 img 요소를 가져옴
+            const image = document.getElementById(`myImage`);
+            // ID가 'changeImage'인 버튼 요소를 가져옴
+            const button2 = document.getElementById(`changeImage`);
+            // 버튼 클릭 시 이미지의 src와 alt 속성을 변경
+            button2.addEventListener(`click`, () => {
+                image.setAttribute(`src`, `image2.jpg`); // 이미지 파일 변경
+                image.setAttribute(`alt`, `Image 2`); // 이미지 대체 텍스트 변경
+            });
+        </script>
+    </div>
+
+</div>
+
+</body>
+</html>
+
