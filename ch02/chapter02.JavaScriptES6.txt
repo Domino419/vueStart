@@ -1,0 +1,105 @@
+
+
+2.5 DOM 객체와 이벤트
+2.5.2 DOM 객체의 조작과 이벤트 
+(1) DOM 객체 조작 
+ 텍스트 조작 : textContent나 innerHTML을 사용해서 요소의 텍스트나 HTML 내용을 변경할 수 있음.
+속성 조작 : setAttribute, getAttribute 등을 통해 요소의 속성을 변경할 수 있음.
+
+(2) DOM 객체 이벤트
+
+1. 마우스 이벤트 (Mouse Events) : 웹 애플리케이션에서 가장 자주 사용되는 이벤트 카테고리
+click: 사용자가 요소를 클릭할 때 발생.
+dblclick: 사용자가 요소를 더블 클릭할 때 발생.
+mousedown / mouseup: 마우스 버튼을 누르거나 뗄 때 발생.
+mousemove: 마우스를 움직일 때 발생.
+mouseenter / mouseleave: 마우스가 요소에 진입하거나 벗어날 때 발생.
+mouseover / mouseout: 마우스가 요소 위에 올라가거나 벗어날 때 발생.
+contextmenu: 마우스 오른쪽 버튼을 클릭했을 때 발생.
+
+2. 키보드 이벤트 (Keyboard Events) : 입력 폼이나 키보드 단축키를 구현할 때 많이 사용됨.
+keydown: 키를 누를 때 발생.
+keyup: 키를 뗄 때 발생.
+keypress: 키를 누르고 있을 때 발생 (권장되지 않음).
+
+3. 포커스 이벤트 (Focus Events) : 폼 입력 필드와 같이 포커스를 받을 수 있는 요소에 사용.
+focus: 요소가 포커스를 받을 때 발생.
+blur: 요소가 포커스를 잃을 때 발생.
+focusin / focusout: 포커스가 자식 요소로 이동하거나 빠져나갈 때 발생.
+
+4. 폼 이벤트 (Form Events) : 폼 처리와 관련된 이벤트.
+submit: 폼이 제출될 때 발생.
+reset: 폼이 리셋될 때 발생.
+change: <input> 등의 값이 변경되었을 때 발생.
+input: 사용자가 입력할 때마다 발생.
+
+5. 윈도 이벤트 (Window Events) : 브라우저 창과 관련된 이벤트.
+load: 페이지가 완전히 로드되었을 때 발생.
+resize: 창의 크기가 변경될 때 발생.
+scroll: 사용자가 페이지를 스크롤할 때 발생.
+unload: 사용자가 페이지를 떠날 때 발생.
+hashchange: URL의 해시(location.hash)가 변경될 때 발생.
+
+6. 터치 이벤트 (Touch Events) : 모바일 디바이스에서 터치와 관련된 이벤트
+touchstart: 화면을 터치할 때 발생.
+touchend: 터치를 끝낼 때 발생.
+touchmove: 터치한 상태로 움직일 때 발생.
+touchcancel: 터치가 취소되었을 때 발생.
+
+7. 드래그 이벤트 (Drag Events) : 드래그 앤 드롭 기능 구현에 사용
+dragstart: 드래그를 시작할 때 발생.
+drag: 드래그 중일 때 발생.
+dragenter / dragleave: 드래그 요소가 진입하거나 벗어날 때 발생.
+dragover: 드래그 요소가 다른 요소 위에 있을 때 발생.
+drop: 드롭했을 때 발생.
+dragend: 드래그가 종료되었을 때 발생.
+
+8. 클립보드 이벤트 (Clipboard Events) : 복사, 잘라내기, 붙여넣기와 관련된 이벤트.
+copy: 복사할 때 발생.
+cut: 잘라낼 때 발생.
+paste: 붙여넣을 때 발생.
+
+9. 미디어 이벤트 (Media Events) : 비디오 및 오디오 요소와 관련된 이벤트.
+play / pause: 미디어 재생이 시작되거나 일시 중지될 때 발생.
+ended: 미디어 재생이 끝났을 때 발생.
+timeupdate: 미디어 재생 위치가 변경될 때 발생.
+volumechange: 볼륨이 변경되었을 때 발생.
+
+10. 네트워크 이벤트 (Network Events)  : 데이터 로딩과 관련된 이벤트.
+progress: 데이터 로드가 진행될 때 발생.
+load: 데이터 로드가 완료되었을 때 발생.
+error: 로드 중 에러가 발생했을 때 발생.
+
+11. 애니메이션 이벤트 (Animation Events) : CSS 애니메이션과 관련된 이벤트.
+animationstart: 애니메이션이 시작될 때 발생.
+animationiteration: 애니메이션이 반복될 때 발생.
+animationend: 애니메이션이 끝날 때 발생.
+
+12. 전환 이벤트 (Transition Events) : CSS 전환과 관련된 이벤트
+transitionstart: 전환이 시작될 때 발생.
+transitionend: 전환이 끝날 때 발생.
+
+2.6 화살표 함수 
+sayName 함수 내에서 printName은 화살표 함수입니다. 화살표 함수는 자신의 this를 가지지 않고 상위 스코프에서 this를 참조합니다. 따라서 sayName 함수 내에서 this는 user 객체를 참조하며, 화살표 함수도 this를 그대로 상속받아 this.name은 user.name으로 'Kitai'를 출력합니다.
+
+
+1. Promise의 기본 구조
+Promise 객체는 세 가지 상태를 가질 수 있습니다:
+
+대기(Pending): Promise가 아직 실행되지 않았거나, 비동기 작업이 아직 완료되지 않은 상태.
+이행(Fulfilled): 비동기 작업이 성공적으로 완료된 상태.
+거부(Rejected): 비동기 작업이 실패한 상태.
+
+2. Promise의 문법
+resolve: 비동기 작업이 성공적으로 완료되었을 때 호출됩니다. 이후 then() 메소드로 처리할 수 있습니다.
+reject: 비동기 작업이 실패했을 때 호출됩니다. 이후 catch() 메소드로 처리할 수 있습니다.
+
+3. Promise의 주요 메소드
+then(onFulfilled, onRejected): Promise가 이행되면 onFulfilled 함수가 실행되고, 거부되면 onRejected 함수가 실행됩니다.
+catch(onRejected): Promise가 거부되었을 때 실행되는 메소드.
+finally(onFinally): Promise의 결과에 관계없이 항상 실행되는 메소드. (성공/실패에 상관없이 실행)
+ 
+4. Promise 사용 시 장점
+콜백 함수의 중첩을 방지: 여러 개의 비동기 작업을 처리할 때, Promise를 사용하면 **"콜백 지옥"**을 피할 수 있습니다.
+비동기 코드의 가독성 향상: .then()이나 .catch()를 체이닝하여 비동기 작업의 흐름을 직관적으로 표현할 수 있습니다.
+에러 처리: Promise는 catch() 메서드를 이용하여 에러를 일관되게 처리할 수 있습니다.

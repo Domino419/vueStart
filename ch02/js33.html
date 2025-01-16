@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 이벤트 </title>
+</head>
+<body>
+<button id="myButton">Click me</button> <!-- 클릭 이벤트 대상 버튼 -->
+<input id="myInput" type="text" placeholder="Type something..."> <!-- 키보드 입력 이벤트 대상 -->
+<div id="hoverBox" style="width: 200px; height: 100px; background-color: lightblue;">Hover over me</div> <!-- 마우스 오버 이벤트 대상 -->
+
+<script>
+    // 클릭 이벤트
+    const button = document.getElementById(`myButton`); // `button` 상수에 ID가 `myButton`인 요소를 참조
+    button.addEventListener(`click`, () => {           // `button` 요소에 클릭 이벤트 리스너를 추가
+        alert(`Button clicked!`);                      // alert 창 띄우기
+    });
+
+    // 키보드 입력 이벤트
+    const input = document.getElementById(`myInput`);  // `input` 상수에 ID가 `myInput`인 요소를 참조
+    input.addEventListener(`input`, (event) => {       // 입력 필드에 `input` 이벤트 리스너를 추가
+        console.log(`You typed: ${event.target.value}`); // 입력된 값을 콘솔에 출력
+    });
+
+    // 마우스 오버 이벤트
+    const hoverBox = document.getElementById(`hoverBox`); // `hoverBox` 상수에 ID가 `hoverBox`인 요소를 참조
+    hoverBox.addEventListener(`mouseover`, () => {       // 요소 위에 마우스가 올라갔을 때 이벤트 리스너
+        hoverBox.style.backgroundColor = `lightgreen`;   // 배경색을 연한 초록색으로 변경
+    });
+    hoverBox.addEventListener(`mouseout`, () => {        // 요소에서 마우스가 떠났을 때 이벤트 리스너
+        hoverBox.style.backgroundColor = `lightblue`;    // 배경색을 연한 파란색으로 복원
+    });
+</script>
+</body>
+</html>
