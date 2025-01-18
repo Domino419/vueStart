@@ -1,0 +1,12 @@
+/*프로젝트 스타일 설정 */
+/*글로벌 스타일 : 모든 컴포넌트에 적용할 공통 스타일 지정 */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.pure-form-input {
+  margin-right: 10px;
+}
