@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # 학습용 메모 파일 제외
 VueStudyMemo.md
+
+# qodana 제외
+qodana.yaml
