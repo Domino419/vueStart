@@ -13,13 +13,13 @@ export default {
     const handleChange = (event) => console.log('Change : ', event.target.value);
     const handleFocus = () => console.log('Focused' );
     const handleBlur = () => console.log('Blurred');
-    const handleSumit = () => console.log(`Form submitted with value  : ${text.value} ` );
-    const hadleScroll = (event) => console.log('Scrollign : ', event.target.scrollTop);
+    const handleSubmit = () => console.log(`Form submitted with value  : ${text.value} ` );
+    const handleScroll = (event) => console.log('Scrollign : ', event.target.scrollTop);
     const handleContextMenu = () => console.log('Context menu opend ');
 
     return{
-      text, handleClick, handleDbclick, handleMouseOver, handleMouseOut, handleKeydown, handleKeyUp, handleInput, handleChange, handleFocus, handleBlur, handleSumit,
-      hadleScroll, handleContextMenu,
+      text, handleClick, handleDbclick, handleMouseOver, handleMouseOut, handleKeydown, handleKeyUp, handleInput, handleChange, handleFocus, handleBlur, handleSubmit,
+      handleScroll, handleContextMenu,
     } ;
   },
 } ;
@@ -28,15 +28,22 @@ export default {
 <template>
 <div class="bos">
   <h1 class="tittle"> Event Handleing </h1><hr>
-  <button @click="handleClick">Click Me</button><hr>
-  <button @dblclick="handleDbclick">Double Click Me</button><hr>
-  <div @mouseover="handleMouseOver" @mouseout="handleMouseOut" class="notidication"> Mouse Over/Out </div>
+      <button @click="handleClick">Click Me</button><hr>
+   <button @dblclick="handleDbclick">Double Click Me</button><hr>
+   <div @mouseover="handleMouseOver" @mouseout="handleMouseOut" class="notification"> Mouse Over/Out </div>
+  <input @keydown="handleKeydown" @keyup="handleKeyUp" placeholder="Key Events" />
+  <input @input="handleInput"  placeholder="Input Event" />
+  <input @change="handleChange"  placeholder="Change Event" />
+  <input @focus="handleFocus" @blur="handleBlur" placeholder="Focus" /> <hr>  <!-- hr  콘텐츠 사이의 구분선으로 사용 ,닫는 태그없이 단독사용  -->
 
-<!--오늘은 이까지만 할래..교재에서 178page -->
+  <form @submit.prevent="handleSubmit">
+  <input type="text" v-model="text" placeholder="Submit Form" />
+    <button type="submit">Submit</button>
+  </form>
 
+  <div @scroll="handleScroll" style="height: 100px ; overflow: auto;" >
+    <div style="height: 300px;"> Scroll Me </div>
+  </div>
+  <div @contextmenu.prevent="handleContextMenu"> Right Click Me (contextmenu) </div>
 </div>
 </template>
-
-<style scoped>
-
-</style>
