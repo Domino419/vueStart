@@ -1,26 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h1 class="center-align">Vue 3 Composition API Demo</h1>
+    <!-- Parent/Child Event with Custom Events -->
+    <ParentComponent />
+    <!-- SubParent/SubChild with v-model -->
+    <SubParentComponent />
+  </div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import ParentComponent from './components/ParentComponent.vue';
+import SubParentComponent from './components/SubParentComponent.vue';
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container {
+  margin-top: 50px;
 }
 </style>
