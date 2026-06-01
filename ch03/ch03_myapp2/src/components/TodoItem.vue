@@ -31,7 +31,7 @@ export default {
 <template>
 <li class="pure-menu-item">
   <span> {{todo.text}}</span>
-  <button @click="remove" class="pure-button pure-button-error"> Remove </button>
+  <button @click="remove" class="pure-button pure-button-error"> remove </button>
 </li>
 </template>
 
