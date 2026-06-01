@@ -1,4 +1,4 @@
-// Vue 라이브러리와 애플리케이션 루트 컴포넌트(App.vue) 불러오기
+// Vue 라이브러리와 애플리케이션 루트 컴포넌트(App.vue) 불러오기   
 import Vue from 'vue'
 import App from './App.vue'
 
