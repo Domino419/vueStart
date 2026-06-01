@@ -6,7 +6,7 @@ const data = [
         pages: 644,
         sug: 0,
         price: 34000,
-        picUrl: "./assets/springboot.jpg",
+        picUrl: "/assets/springboot.jpg",
     },
 
     {
@@ -16,7 +16,7 @@ const data = [
         pages: 592,
         sug: 0,
         price: 35000,
-        picUrl: "./assets/react.jpg",
+        picUrl: "/assets/react.jpg",
     },
 
     {
@@ -26,7 +26,7 @@ const data = [
         pages: 614,
         sug: 0,
         price: 30000,
-        picUrl: "./assets/tensor.jpg",
+        picUrl: "/assets/tensor.jpg",
     },
 
     {
@@ -36,7 +36,7 @@ const data = [
         pages: 816,
         sug: 0,
         price: 32000,
-        picUrl: "./assets/code.jpg",
+        picUrl: "/assets/code.jpg",
     },
 ] ;
 
